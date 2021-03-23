@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function StocksList() {
   const stocks = [
     {
@@ -34,6 +36,9 @@ function StocksList() {
             <li>{stock.changesPercentage}</li>
             <li>{stock.changes}</li>
           </ul>
+          <Link to={`/stocks/${stock.ticker}`} className="button muted-button">
+            View stock!
+          </Link>
         </article>
       ))}
     </section>
