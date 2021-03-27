@@ -1,53 +1,30 @@
 /* eslint-disable */
+import client from '../api/client';
 
 const initialState = {
-  activeStocks: [
-    {
-      ticker: 'NVR',
-      changes: -98.87,
-      price: '3931.93',
-      changesPercentage: '(-2.45%)',
-      companyName: 'NVR Inc',
-    },
-    {
-      ticker: 'AMZN',
-      changes: -73.38,
-      price: '3294.62',
-      changesPercentage: '(-2.18%)',
-      companyName: 'Amazon.com Inc',
-    },
-    {
-      ticker: 'GOOG',
-      changes: -50.8,
-      price: '1591.04',
-      changesPercentage: '(-3.09%)',
-      companyName: 'Alphabet Inc.',
-    },
-  ],
-  lossingStocks: [],
-  gainingStocks: [],
+  activeStocks: { data: [], status: 'idle'},
+  gainingStocks: { data: [], status: 'idle'},
+  lossingStocks: { data: [], status: 'idle'},
 };
 
 const stocks = (state = initialState, action) => {
   switch (action.type) {
-    case 'FETCH_ACTIVE_STOCKS':
+    case 'stocks/activeStockLoaded':
       return {
         ...state,
-        activeStocks: action.payload,
-      }
-    case 'FETCH_LOSSING_STOCKS':
-      return {
-        ...state,
-        lossingStocks: action.payload,
-      }
-    case 'FETCH_GAINING_STOCKS':
-      return {
-        ...state,
-        gainingStocks: action.payload,
+        activeStocks: { ...status.activeStocks, data: action.payload, status: 'completed' },
       }
     default:
-      return state
+      return state;
   }
 };
+
+export const selectActiveStocks = state => state.stocks.activeStocks.data; 
+
+export async function fetchStocks(dispatch, getState) {
+  const url = 'https://financialmodelingprep.com/api/v3/actives?apikey=f2223d63be9ab529a313ed201fbaee30';
+  const data = await client.get(url);
+  dispatch({ type: 'stocks/activeStockLoaded', payload: data });
+}
 
 export default stocks;

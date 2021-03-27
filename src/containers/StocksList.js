@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { selectActiveStocks } from '../reducers/stocks';
 
 function StocksList() {
-  const stocks = useSelector(state => state.stocks[state.visibilityFilter]);
+  const stocks = useSelector(state => selectActiveStocks(state));
 
   return (
     <section>
