@@ -19,7 +19,7 @@ const stocks = (state = initialState, action) => {
   }
 };
 
-export const selectActiveStocks = state => state.stocks.activeStocks.data; 
+export const selectCurrentStocksByFilter = (filterValue, state) => state.stocks[filterValue]; 
 
 export async function fetchStocks(dispatch, getState) {
   const url = 'https://financialmodelingprep.com/api/v3/actives?apikey=f2223d63be9ab529a313ed201fbaee30';

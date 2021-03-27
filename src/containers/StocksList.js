@@ -1,13 +1,28 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { selectActiveStocks } from '../reducers/stocks';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { fetchStocks, selectCurrentStocksByFilter } from '../reducers/stocks';
 
 function StocksList() {
-  const stocks = useSelector(state => selectActiveStocks(state));
+  const dispatch = useDispatch();
+  const currentStocks = useSelector(state => {
+    const filter = state.visibilityFilter;
+    return selectCurrentStocksByFilter(filter, state);
+  });
+
+  const currentStocksData = currentStocks.data;
+  const currentStocksStatus = currentStocks.status;
+
+  useEffect(() => {
+    if (currentStocksStatus === 'idle') {
+      dispatch(fetchStocks);
+    }
+  }, [dispatch, currentStocksStatus]);
 
   return (
     <section>
-      {stocks.map(stock => (
+      {currentStocksData.map(stock => (
         <article key={stock.ticker}>
           <h2>{stock.companyName}</h2>
           <h3>{stock.ticker}</h3>
