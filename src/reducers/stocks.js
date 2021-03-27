@@ -1,55 +1,54 @@
-/* eslint-disable */
 import client from '../api/client';
 
 const initialState = {
-  activeStocks: { data: [], status: 'idle'},
-  gainingStocks: { data: [], status: 'idle'},
-  losingStocks: { data: [], status: 'idle'},
+  activeStocks: { data: [], stockStatus: 'idle' },
+  gainingStocks: { data: [], stockStatus: 'idle' },
+  losingStocks: { data: [], stockStatus: 'idle' },
 };
 
 const stocks = (state = initialState, action) => {
   switch (action.type) {
-    case 'stocks/activeStockStarted':
+    case 'stocks/activeStocksStarted':
       return {
         ...state,
-        activeStocks: { ...status.activeStocks, status: 'loading' },
-      }
-    case 'stocks/activeStockLoaded':
+        activeStocks: { ...state.activeStocks, stockStatus: 'loading' },
+      };
+    case 'stocks/activeStocksLoaded':
       return {
         ...state,
-        activeStocks: { ...status.activeStocks, data: action.payload, status: 'completed' },
-      }
+        activeStocks: { ...state.activeStocks, data: action.payload, stockStatus: 'completed' },
+      };
 
-    case 'stocks/losingStockStarted':
+    case 'stocks/losingStocksStarted':
       return {
         ...state,
-        losingStocks: { ...status.losingStocks, status: 'loading' },
-      }
-    case 'stocks/losingStockLoaded':
+        losingStocks: { ...state.losingStocks, stockStatus: 'loading' },
+      };
+    case 'stocks/losingStocksLoaded':
       return {
         ...state,
-        losingStocks: { ...status.losingStocks, data: action.payload, status: 'completed' },
-      }
+        losingStocks: { ...state.losingStocks, data: action.payload, stockStatus: 'completed' },
+      };
 
-    case 'stocks/gainingStockStarted':
+    case 'stocks/gainingStocksStarted':
       return {
         ...state,
-        gainingStocks: { ...status.gainingStocks, status: 'loading' },
-      }
-    case 'stocks/gainingStockLoaded':
+        gainingStocks: { ...state.gainingStocks, stockStatus: 'loading' },
+      };
+    case 'stocks/gainingStocksLoaded':
       return {
         ...state,
-        gainingStocks: { ...status.gainingStocks, data: action.payload, status: 'completed' },
-      }
+        gainingStocks: { ...state.gainingStocks, data: action.payload, stockStatus: 'completed' },
+      };
     default:
       return state;
   }
 };
 
-export const selectCurrentStocksByFilter = (filterValue, state) => state.stocks[filterValue]; 
+export const selectCurrentStocksByFilter = (filterValue, state) => state.stocks[filterValue];
 
 export const fetchStocks = category => {
-  const stocksCategory = { 
+  const stocksCategory = {
     activeStocks: 'actives',
     losingStocks: 'losers',
     gainingStocks: 'gainers',
@@ -57,13 +56,13 @@ export const fetchStocks = category => {
 
   const baseUrl = 'https://financialmodelingprep.com/api/v3/';
   const apiKey = 'f2223d63be9ab529a313ed201fbaee30';
-  const url = `${baseUrl}${stocksCategory[category || 'actives']}?apikey=${apiKey}`;
+  const url = `${baseUrl}${stocksCategory[category || 'activeStocks']}?apikey=${apiKey}`;
 
-  return async (dispatch, getState) => {
+  return async dispatch => {
     dispatch({ type: `stocks/${category}Started` });
     const data = await client.get(url);
     dispatch({ type: `stocks/${category}Loaded`, payload: data });
-  }
+  };
 };
 
 export default stocks;

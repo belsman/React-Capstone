@@ -5,13 +5,13 @@ const SelectStockCategory = () => {
   const dispatch = useDispatch();
   const currentSelectedFilter = useSelector(state => state.visibilityFilter);
 
-  const handleInputChange = e => dispatch({ type: 'SET_VISIBILITY_FILTER', payload: e.target.value});
+  const handleInputChange = e => dispatch({ type: 'SET_VISIBILITY_FILTER', payload: e.target.value });
 
   return (
     <select name="stockCategory" id="stockCategory" value={currentSelectedFilter} onChange={handleInputChange}>
-      <option value='activeStocks'>Active Stocks</option>
-      <option value='gainingStocks'>Gainers</option>
-      <option value='losingStocks'>Losers</option>
+      <option value="activeStocks">Active Stocks</option>
+      <option value="gainingStocks">Gainers</option>
+      <option value="losingStocks">Losers</option>
     </select>
   );
 };

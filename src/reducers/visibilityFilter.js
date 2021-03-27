@@ -1,11 +1,9 @@
-/* eslint-disable */
-
 const visibilityFilter = (state = 'activeStocks', action) => {
   switch (action.type) {
     case 'SET_VISIBILITY_FILTER':
-      return action.filter
+      return action.payload;
     default:
-      return state
+      return state;
   }
 };
 

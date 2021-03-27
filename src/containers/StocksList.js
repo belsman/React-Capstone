@@ -6,13 +6,11 @@ import { fetchStocks, selectCurrentStocksByFilter } from '../reducers/stocks';
 
 function StocksList() {
   const dispatch = useDispatch();
-  const filter = useSelector(state => state.visibilityFilter)
-  const currentStocks = useSelector(state => {
-    return selectCurrentStocksByFilter(filter, state);
-  });
+  const filter = useSelector(state => state.visibilityFilter);
+  const currentStocks = useSelector(state => selectCurrentStocksByFilter(filter, state));
 
   const currentStocksData = currentStocks.data;
-  const currentStocksStatus = currentStocks.status;
+  const currentStocksStatus = currentStocks.stockStatus;
 
   useEffect(() => {
     if (currentStocksStatus === 'idle') {
