@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 import StocksList from './containers/StocksList';
-import DetailStockPage from './containers/DetailStockPage';
+import DetailStockPage from './components/DetailStockPage';
 import Navbar from './containers/Navbar';
 
 function App() {

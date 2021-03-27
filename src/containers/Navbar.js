@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+import SelectStockCategory from '../components/SelectStockCategroy';
+
 const Navbar = () => (
   <nav>
     <section>
@@ -11,6 +13,7 @@ const Navbar = () => (
         <div className="navLinks">
           <Link to="/">Stocks</Link>
         </div>
+        <SelectStockCategory />
       </div>
     </section>
   </nav>
