@@ -8,7 +8,7 @@ const DetailStockPage = ({ match }) => {
   const { stickerName } = match.params;
   const dispatch = useDispatch();
   const stockDetail = useSelector(state => state.stockDetail);
-  const { data, stockStatus, stockError } = stockDetail;
+  const { data, stockStatus } = stockDetail;
   const { symbol } = data;
 
   useEffect(() => {
@@ -45,8 +45,6 @@ const DetailStockPage = ({ match }) => {
     content = <div className="loader">Loading...</div>;
   } else if (stockStatus === 'completed') {
     content = stockInfo(data);
-  } else if (stockStatus === 'failed') {
-    content = <div>{stockError}</div>;
   }
 
   return (

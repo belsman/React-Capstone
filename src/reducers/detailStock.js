@@ -9,10 +9,12 @@ const initialState = {
 const stockDetail = (state = initialState, action) => {
   switch (action.type) {
     case 'detail/StockStarted':
-      return { ...state, stockStatus: 'loading' };
+      return { ...state, stockStatus: 'loading', stockError: null };
 
     case 'detail/StockLoaded':
-      return { ...state, data: action.payload, stockStatus: 'completed' };
+      return {
+        ...state, data: action.payload, stockStatus: 'completed', stockError: null,
+      };
 
     case 'detail/StockError':
       return { ...state, stockError: action.error, stockStatus: 'failed' };
@@ -33,7 +35,7 @@ export const fetchStock = stockSymbol => {
       const data = await client.get(url);
       dispatch({ type: 'detail/StockLoaded', payload: data[0] });
     } catch (error) {
-      dispatch({ type: 'detail/StockError', error: error.message });
+      console.log(error.message);
     }
   };
 };

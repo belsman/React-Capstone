@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import SelectStockCategory from '../components/SelectStockCategroy';
+import SearchForm from '../components/SearchFrom';
 
 const Navbar = () => (
   <nav>
@@ -13,6 +14,7 @@ const Navbar = () => (
         <div className="navLinks">
           <Link to="/">Stocks</Link>
         </div>
+        <SearchForm />
         <SelectStockCategory />
       </div>
     </section>

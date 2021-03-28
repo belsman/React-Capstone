@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import StocksList from './containers/StocksList';
+import SearchResult from './containers/SearchResult';
 import DetailStockPage from './components/DetailStockPage';
 import Navbar from './containers/Navbar';
 
@@ -26,6 +27,7 @@ function App() {
             )}
           />
           <Route exact path="/stocks/:stickerName" component={DetailStockPage} />
+          <Route exact path="/search" component={SearchResult} />
           <Redirect to="/" />
         </Switch>
       </div>
