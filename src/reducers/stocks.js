@@ -1,9 +1,9 @@
 import client from '../api/client';
 
 const initialState = {
-  activeStocks: { data: [], stockStatus: 'idle' },
-  gainingStocks: { data: [], stockStatus: 'idle' },
-  losingStocks: { data: [], stockStatus: 'idle' },
+  activeStocks: { data: [], stockStatus: 'idle', stockError: null },
+  gainingStocks: { data: [], stockStatus: 'idle', stockError: null },
+  losingStocks: { data: [], stockStatus: 'idle', stockError: null },
 };
 
 const stocks = (state = initialState, action) => {
@@ -13,10 +13,17 @@ const stocks = (state = initialState, action) => {
         ...state,
         activeStocks: { ...state.activeStocks, stockStatus: 'loading' },
       };
+
     case 'stocks/activeStocksLoaded':
       return {
         ...state,
         activeStocks: { ...state.activeStocks, data: action.payload, stockStatus: 'completed' },
+      };
+
+    case 'stocks/activeStocksError':
+      return {
+        ...state,
+        activeStocks: { ...state.activeStocks, stockError: action.error, stockStatus: 'failed' },
       };
 
     case 'stocks/losingStocksStarted':
@@ -30,6 +37,12 @@ const stocks = (state = initialState, action) => {
         losingStocks: { ...state.losingStocks, data: action.payload, stockStatus: 'completed' },
       };
 
+    case 'stocks/losingStocksError':
+      return {
+        ...state,
+        losingStocks: { ...state.losingStocks, stockError: action.error, stockStatus: 'failed' },
+      };
+
     case 'stocks/gainingStocksStarted':
       return {
         ...state,
@@ -39,6 +52,11 @@ const stocks = (state = initialState, action) => {
       return {
         ...state,
         gainingStocks: { ...state.gainingStocks, data: action.payload, stockStatus: 'completed' },
+      };
+    case 'stocks/gainingStocksError':
+      return {
+        ...state,
+        gainingStocks: { ...state.gainingStocks, stockError: action.error, stockStatus: 'failed' },
       };
     default:
       return state;
@@ -60,8 +78,12 @@ export const fetchStocks = category => {
 
   return async dispatch => {
     dispatch({ type: `stocks/${category}Started` });
-    const data = await client.get(url);
-    dispatch({ type: `stocks/${category}Loaded`, payload: data });
+    try {
+      const data = await client.get(url);
+      dispatch({ type: `stocks/${category}Loaded`, payload: data });
+    } catch (error) {
+      dispatch({ type: `stocks/${category}Error`, error: error.message });
+    }
   };
 };
 
