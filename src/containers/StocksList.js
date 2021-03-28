@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Stock from '../components/Stock';
+import SelectStockCategory from '../components/SelectStockCategroy';
+
 import { fetchStocks, selectCurrentStocksByFilter } from '../reducers/stocks';
 
 const StocksList = () => {
@@ -30,9 +32,12 @@ const StocksList = () => {
   }
 
   return (
-    <section>
-      {content}
-    </section>
+    <>
+      <SelectStockCategory />
+      <section>
+        {content}
+      </section>
+    </>
   );
 };
 
