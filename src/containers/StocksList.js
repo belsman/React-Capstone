@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import ClipLoader from 'react-spinners/ClipLoader';
+
 import Stock from '../components/Stock';
 import SelectStockCategory from '../components/SelectStockCategroy';
 
 import { fetchStocks, selectCurrentStocksByFilter } from '../reducers/stocks';
+import override from '../syledComponent';
 
 const StocksList = () => {
   const dispatch = useDispatch();
@@ -24,11 +27,15 @@ const StocksList = () => {
   let content;
 
   if (currentStocksStatus === 'loading') {
-    content = <div className="loader">Loading...</div>;
+    content = (
+      <div className="loader">
+        <ClipLoader color="#0000ff" css={override} size={150} />
+      </div>
+    );
   } else if (currentStocksStatus === 'completed') {
     content = currentStocksData.map(stock => <Stock key={stock.ticker} stock={stock} />);
   } else if (currentStocksStatus === 'failed') {
-    content = <div>{error}</div>;
+    content = <div className="error text-danger">{error}</div>;
   }
 
   return (

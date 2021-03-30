@@ -2,7 +2,11 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import ClipLoader from 'react-spinners/ClipLoader';
+
 import { fetchStock } from '../reducers/detailStock';
+
+import override from '../syledComponent';
 
 const DetailStockPage = ({ match }) => {
   const { stickerName } = match.params;
@@ -73,7 +77,11 @@ const DetailStockPage = ({ match }) => {
   );
 
   if (stockStatus === 'loading') {
-    content = <div className="loader">Loading...</div>;
+    content = (
+      <div className="loader">
+        <ClipLoader css={override} size={150} />
+      </div>
+    );
   } else if (stockStatus === 'completed') {
     content = stockInfo(data);
   }
