@@ -6,3 +6,12 @@
 .topNav {
   background-color: #313a46;
 }
+
+.cstock-card {
+  width: 25%;
+}
+
+.stock-list-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
