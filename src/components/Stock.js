@@ -6,7 +6,7 @@ const Stock = ({ stock }) => (
   <div className="card stock-card mb-1">
     <article className="card-body">
       <h5>{stock.ticker}</h5>
-      <span>{stock.companyName}</span>
+      <h6 className="text-truncate">{stock.companyName}</h6>
       <div className="my-2 py-2">
         <span className="">Price</span>
         <div className="d-flex justify-content-between">

@@ -18,9 +18,11 @@ const SearchResult = () => {
   }
 
   return (
-    <section>
-      {content || <h2>No matching Result found!</h2>}
-    </section>
+    <div className="p-1">
+      <section className="stock-list-container mt-2">
+        {content || <h2>No matching Result found!</h2>}
+      </section>
+    </div>
   );
 };
 
