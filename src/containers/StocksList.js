@@ -33,7 +33,10 @@ const StocksList = () => {
 
   return (
     <>
-      <SelectStockCategory />
+      <div className="border p-2 d-flex justify-content-between">
+        <span>Powered by the stocks API</span>
+        <SelectStockCategory />
+      </div>
       <section>
         {content}
       </section>
