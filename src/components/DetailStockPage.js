@@ -21,23 +21,54 @@ const DetailStockPage = ({ match }) => {
 
   const stockInfo = data => (
     <article className="stock">
-      <h2>{data.companyName}</h2>
-      <ul>
-        <li>
-          Market Cap :
-          {data.mktCap}
+      <header className="text-center">
+        <h2 className="text-secondary">{data.companyName}</h2>
+        <h5>{stickerName}</h5>
+      </header>
+      <ul className="list-group mb-1">
+        <li className="list-group-item d-flex justify-content-between">
+          <span>Industry</span>
+          <span>{data.industry}</span>
         </li>
-        <li>
-          price :
-          {data.price}
+        <li className="list-group-item d-flex justify-content-between">
+          <span>Beta</span>
+          <span>{data.beta}</span>
         </li>
-        <li>
-          Changes:
-          {data.changes}
+        <li className="list-group-item d-flex justify-content-between">
+          <span>Volume Average</span>
+          <span>{data.volAvg}</span>
+        </li>
+        <li className="list-group-item d-flex justify-content-between">
+          <span>Last Dividend</span>
+          <span>{data.lastDiv}</span>
+        </li>
+        <li className="list-group-item d-flex justify-content-between">
+          <span>Market Cap</span>
+          <span>{data.mktCap}</span>
+        </li>
+        <li className="list-group-item d-flex justify-content-between">
+          <span>Price</span>
+          <span>{data.price}</span>
+        </li>
+        <li className="list-group-item d-flex justify-content-between">
+          <span>Currency</span>
+          <span>{data.currency}</span>
+        </li>
+        <li className="list-group-item d-flex justify-content-between">
+          <span>Changes</span>
+          <span>{data.changes}</span>
+        </li>
+        <li className="list-group-item d-flex justify-content-between">
+          <span>Website</span>
+          <span>
+            <a href={data.website} target="_blank" rel="noreferrer">{data.website}</a>
+          </span>
         </li>
       </ul>
-      <h4>Description</h4>
-      <p>{data.description}</p>
+      <section className="desc px-3 border">
+        <h4>Description</h4>
+        <p className="text-justify">{data.description}</p>
+      </section>
     </article>
   );
 

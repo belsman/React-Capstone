@@ -15,3 +15,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+.stock {
+  width: 50%;
+  margin: auto;
+}
