@@ -1,4 +1,7 @@
+import dotenv from 'dotenv';
 import client from '../api/client';
+
+dotenv.config();
 
 const initialState = {
   activeStocks: { data: [], stockStatus: 'idle', stockError: null },
@@ -73,7 +76,7 @@ export const fetchStocks = category => {
   };
 
   const baseUrl = 'https://financialmodelingprep.com/api/v3/';
-  const apiKey = 'f2223d63be9ab529a313ed201fbaee30';
+  const apiKey = process.env.REACT_APP_API_SECRET_KEY;
   const url = `${baseUrl}${stocksCategory[category || 'activeStocks']}?apikey=${apiKey}`;
 
   return async dispatch => {

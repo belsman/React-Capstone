@@ -1,4 +1,7 @@
+import dotenv from 'dotenv';
 import client from '../api/client';
+
+dotenv.config();
 
 const initialState = {
   data: [],
@@ -26,7 +29,7 @@ const search = (state = initialState, action) => {
 
 export const searchStock = (searchTerm, exchange) => {
   const baseUrl = 'https://financialmodelingprep.com/api/v3/search';
-  const apiKey = 'f2223d63be9ab529a313ed201fbaee30';
+  const apiKey = process.env.REACT_APP_API_SECRET_KEY;
   const url = `${baseUrl}?query=${searchTerm}&limit=10&exchange=${exchange}&apikey=${apiKey}`;
 
   return async dispatch => {
