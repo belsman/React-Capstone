@@ -40,8 +40,12 @@ const StocksList = () => {
 
   return (
     <>
-      <div className="border mb-2 p-2 d-flex justify-content-between">
-        <span>Powered by the stocks API</span>
+      <div className="border mb-2 p-2 d-sm-flex justify-content-sm-between">
+        <small>
+          <a href="https://financialmodelingprep.com/developer/docs/" className="font-italic" target="_blank" rel="noreferrer">
+            Data provided by Financial Modeling Prep
+          </a>
+        </small>
         <SelectStockCategory />
       </div>
       <div className="p-1">

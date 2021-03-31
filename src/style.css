@@ -5,10 +5,7 @@
 
 .topNav {
   background-color: #313a46;
-}
-
-.cstock-card {
-  width: 25%;
+  color: #fff;
 }
 
 .stock-list-container {
@@ -27,4 +24,28 @@
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
+}
+
+/* == Medium Devices == */
+@media screen and (max-width: 768px) {
+  .stock-list-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .stock {
+    width: 75%;
+    margin: auto;
+  }
+}
+
+/* == Small Devices == */
+@media screen and (max-width: 540px) {
+  .stock-list-container {
+    grid-template-columns: 1fr;
+  }
+
+  .stock {
+    width: 100%;
+    margin: 0;
+  }
 }
