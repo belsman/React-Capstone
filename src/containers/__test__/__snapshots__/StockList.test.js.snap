@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the expected output 1`] = `
+"<div class=\\"border mb-2 p-2 d-sm-flex justify-content-sm-between\\"><small><a href=\\"https://financialmodelingprep.com/developer/docs/\\" class=\\"font-italic\\" target=\\"_blank\\" rel=\\"noreferrer\\">Data provided by Financial Modeling Prep</a></small>
+  <div>Category</div>
+</div>
+<div class=\\"p-1\\">
+  <div class=\\"stock-list-container\\">
+    <div>Hello</div>
+    <div>Hello</div>
+    <div>Hello</div>
+  </div>
+</div>"
+`;
