@@ -14,7 +14,7 @@ The application features
 
 ## Live version
 
-🔗 [Click here to go live](https://stocks-listing.herokuapp.com/)
+🔗 [Click here to go live](https://stockr-belsman.herokuapp.com/)
 
 ## Built With
 
