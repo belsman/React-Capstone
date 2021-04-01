@@ -6,8 +6,6 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import 'bootstrap';
-
 import StocksList from './containers/StocksList';
 import SearchResult from './containers/SearchResult';
 import DetailStockPage from './components/DetailStockPage';
