@@ -18,7 +18,7 @@ const Stock = ({ stock }) => (
           <span className={stock.changes < 0 ? 'text-danger' : 'text-success'}>
             {stock.changesPercentage.replace(/[()]+/g, '')}
             {' '}
-            <i className={stock.changes < 0 ? 'fas fa-arrow-down' : 'fas fa-arrow-up'} />
+            <i className={stock.changes < 0 ? 'fa fa-arrow-down' : 'fa fa-arrow-up'} />
           </span>
         </div>
       </div>
