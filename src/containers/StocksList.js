@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import ClipLoader from 'react-spinners/ClipLoader';
 
 import Stock from '../components/Stock';
-import SelectStockCategory from '../components/SelectStockCategroy';
+import SelectStockCategory from '../components/SelectStockCategory';
 
 import { fetchStocks, selectCurrentStocksByFilter } from '../reducers/stocks';
 import override from '../syledComponent';

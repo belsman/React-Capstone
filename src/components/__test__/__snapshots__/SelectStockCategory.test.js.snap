@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the expected output 1`] = `
+"<select name=\\"stockCategory\\" id=\\"stockCategory\\">
+  <option value=\\"activeStocks\\">Active Stocks</option>
+  <option value=\\"gainingStocks\\">Gainers</option>
+  <option value=\\"losingStocks\\">Losers</option>
+</select>"
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the expected output 1`] = `
+"<form class=\\"form-inline ml-auto\\" method=\\"POST\\"><input class=\\"form-control custom-form-group mt-1 mr-sm-2\\" placeholder=\\"Search\\" type=\\"text\\" name=\\"search\\" id=\\"search\\" required=\\"\\" value=\\"\\"><select class=\\"form-control custom-form-group mt-1 mr-sm-2\\" name=\\"selectExchange\\" id=\\"selectExchange\\">
+    <option value=\\"ETF\\">ETF</option>
+    <option value=\\"MUTUAL_FUND\\">MUTUAL_FUND</option>
+    <option value=\\"COMMODITY\\">COMMODITY</option>
+    <option value=\\"INDEX\\">INDEX</option>
+    <option value=\\"CRYPTO \\">CRYPTO </option>
+    <option value=\\"FOREX\\">FOREX</option>
+    <option value=\\"TSX\\">TSX</option>
+    <option value=\\"AMEX\\">AMEX</option>
+    <option value=\\"NASDAQ\\">NASDAQ</option>
+    <option value=\\"NYSE\\">NYSE</option>
+    <option value=\\"EURONEXT\\">EURONEXT</option>
+    <option value=\\"XETRA\\">XETRA</option>
+    <option value=\\"NSE\\">NSE</option>
+    <option value=\\"LSE\\">LSE</option>
+  </select><button type=\\"submit\\" class=\\"mt-1 btn btn-primary\\">Search</button></form>"
+`;

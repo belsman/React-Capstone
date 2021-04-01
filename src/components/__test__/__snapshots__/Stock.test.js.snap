@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the expected output 1`] = `
+"<div class=\\"card stock-card mb-1\\">
+  <article class=\\"card-body\\">
+    <h5>BS</h5>
+    <h6 class=\\"text-truncate\\">belsman</h6>
+    <div class=\\"my-2 py-2\\"><span class=\\"\\">Price</span>
+      <div class=\\"d-flex justify-content-between\\"><span class=\\"h5 text-secondary\\">$ 4000</span><span class=\\"text-success\\">1% <i class=\\"fas fa-arrow-up\\"></i></span></div>
+    </div>
+    <div>A Dummy Link</div>
+  </article>
+</div>"
+`;
+
+exports[`should render the expected output 2`] = `
+"<div class=\\"card stock-card mb-1\\">
+  <article class=\\"card-body\\">
+    <h5>NG</h5>
+    <h6 class=\\"text-truncate\\">Niger Company</h6>
+    <div class=\\"my-2 py-2\\"><span class=\\"\\">Price</span>
+      <div class=\\"d-flex justify-content-between\\"><span class=\\"h5 text-secondary\\">$ 4000</span><span class=\\"text-danger\\">-1% <i class=\\"fas fa-arrow-down\\"></i></span></div>
+    </div>
+    <div>A Dummy Link</div>
+  </article>
+</div>"
+`;

@@ -1,10 +1,11 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
+import pretty from 'pretty';
 
 /* eslint-disable no-unused-vars */
 import { Link } from 'react-router-dom';
-import Stock from './Stock';
+import Stock from '../Stock';
 
 jest.mock('react-router-dom', () => ({
   Link() {
@@ -66,4 +67,22 @@ it('renders with with the correct stock info for stock2', () => {
   const spans = document.querySelectorAll('span');
   const changesPercentageSPan = spans[spans.length - 1];
   expect(changesPercentageSPan.className).toBe('text-danger');
+});
+
+it('should render the expected output', () => {
+  act(() => {
+    render(<Stock stock={stock} />, container);
+  });
+
+  expect(
+    pretty(container.innerHTML),
+  ).toMatchSnapshot();
+
+  act(() => {
+    render(<Stock stock={stock2} />, container);
+  });
+
+  expect(
+    pretty(container.innerHTML),
+  ).toMatchSnapshot();
 });

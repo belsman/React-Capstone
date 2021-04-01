@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the expected output 1`] = `
+"<div class=\\"card stock-card mb-1\\">
+  <article class=\\"card-body\\">
+    <h4>PRAA</h4>
+    <h6 class=\\"text-truncate\\">PRA Group, Inc.</h6>
+    <div class=\\"my-3 py-2\\">
+      <div class=\\"d-flex justify-content-between mb-1\\"><span>Currency</span><span class=\\"h6 text-secondary\\">USD</span></div>
+      <div class=\\"d-flex justify-content-between\\"><span>Exchange</span><span class=\\"h6 text-secondary\\">NasdaqGS</span></div>
+    </div>
+    <div>A Dummy Link</div>
+  </article>
+</div>"
+`;
