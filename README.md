@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project: React-Capstone
+## Catalogue of Statistics
 
-## Available Scripts
+This is a frontend web application, developed using React and Redux which lists a catalogue of financial values using [Stock API](https://financialmodelingprep.com/developer/docs/).
 
-In the project directory, you can run:
+The application features
+- Display the Most Active Stocks
+- Display the Most Gaining Stocks
+- Display the Most Losing Stocks
+- Open individual stock item and shows further details
+- Search for a particular stock item or Stock items, example 'AAPL'
 
-### `npm start`
+## Live version
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+🔗 [Click here to go live](https://powerful-oasis-60936.herokuapp.com/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Built With
 
-### `npm test`
+- React
+- Redux
+- Bootstrap 4
+- Font awesome 5
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Run Stockr Locally
 
-### `npm run build`
+To get a local copy up and running follow these simple steps.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In order to run **Stockr** locally, you will require the following:
+- Nodejs and npm
+- An API key for consuming the [Financial Modelling Prep API](https://financialmodelingprep.com/developer/docs/) data
+- You are ready to go!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Install
 
-### `npm run eject`
+1) Open the Terminal
+2) Run
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+git clone https://github.com/belsman/React-Capstone.git
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+or, for SSH:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+git clone git@github.com:belsman/React-Capstone.git
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3) Run ```cd React-Capstone``` to enter the main directory
+4) Run ```npm install```
+5) Configure the API KEY
+    - [Sign up](https://financialmodelingprep.com/developer/docs/) to get an API
+    - Navigate to the dashboard to copy the API
+    - Create `.env` file in the current directory, open it and add `REACT_APP_API_KEY=YOUR_API_KEY_HERE`
+6) Run `npm start` to launch **Stockr**
+7) Happy viewing!
 
-## Learn More
+## Testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1) Open the Terminal
+2) Run ```cd React-Capstone``` to enter the root directory of the project
+3) Run ```npm test```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Author
 
-### Code Splitting
+👤 **Bello Babakolo**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Github: [@belsman](https://github.com/belsman)
+- Twitter: [@d_belsman](https://twitter.com/d_belsman)
+- Linkdin: [Bello Babakolo](https://www.linkedin.com/in/bello-babakolo-b23b17145/)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🤝 Contributing
 
-### Making a Progressive Web App
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Feel free to check the [issues page](issues/).
 
-### Advanced Configuration
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Give a ⭐️ if you like this project!
 
-### Deployment
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Microverse Inc](https://www.microverse.org/)
+- [Financial Modelling Prep API](https://financialmodelingprep.com/developer/docs/)
