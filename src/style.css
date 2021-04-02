@@ -26,6 +26,10 @@
   transform: translate(-50%, -50%);
 }
 
+.stock-list-container .not-found {
+  grid-column: 1 / span 4;
+}
+
 /* == Medium Devices == */
 @media screen and (max-width: 768px) {
   .stock-list-container {

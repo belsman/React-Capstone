@@ -19,7 +19,11 @@ const SearchResult = () => {
       </div>
     );
   } else if (searchStatus === 'completed') {
-    content = data.map(stock => <SearchedStock key={stock.symbol} stock={stock} />);
+    if (data.length > 0) {
+      content = data.map(stock => <SearchedStock key={stock.symbol} stock={stock} />);
+    } else {
+      content = <h2 className="text-center not-found">No matching Result found!</h2>;
+    }
   } else if (searchStatus === 'failed') {
     content = <div className="error">{searchError}</div>;
   }
@@ -27,7 +31,7 @@ const SearchResult = () => {
   return (
     <div className="p-1">
       <section className="stock-list-container mt-2">
-        {content || <h2>No matching Result found!</h2>}
+        {content}
       </section>
     </div>
   );
