@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import SearchForm from '../components/SearchFrom';
+import SearchForm from '../containers/SearchFrom';
 
 const Navbar = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-dark">

@@ -8,8 +8,8 @@ import {
 
 import StocksList from './containers/StocksList';
 import SearchResult from './containers/SearchResult';
-import DetailStockPage from './components/DetailStockPage';
-import Navbar from './containers/Navbar';
+import DetailStockPage from './containers/DetailStockPage';
+import Navbar from './components/Navbar';
 
 import './style.css';
 

@@ -11,13 +11,13 @@ import override from '../../syledComponent';
 
 import StocksList from '../StocksList';
 import Stock from '../../components/Stock';
-import SelectStockCategory from '../../components/SelectStockCategory';
+import SelectStockCategory from '../SelectStockCategory';
 
 jest.mock('../../components/Stock', () => function Stock() {
   return <div>Hello</div>;
 });
 
-jest.mock('../../components/SelectStockCategory', () => function Stock() {
+jest.mock('../SelectStockCategory', () => function Stock() {
   return <div>Category</div>;
 });
 
